@@ -16,6 +16,7 @@ sudo apt-get update -y && \
 sudo apt-get install containerd.io
 
 ###Tweak config
+sudo touch /etc/containerd/config.toml
 sudo containerd config default | sudo tee /etc/containerd/config.toml
 sudo sed -i 's/SystemdCgroup \= false/SystemdCgroup \= true/g' /etc/containerd/config.toml
 
